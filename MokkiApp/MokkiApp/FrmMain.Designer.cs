@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabAsiakkaat = new System.Windows.Forms.TabPage();
+            this.cmbCustomerOrder = new System.Windows.Forms.ComboBox();
             this.btnAsiakkaatEdit = new System.Windows.Forms.Button();
             this.btnAsiakkaatDelete = new System.Windows.Forms.Button();
             this.dgvAsiakkaat = new System.Windows.Forms.DataGridView();
@@ -49,6 +51,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPalvelut = new System.Windows.Forms.TabPage();
+            this.cmbServiceOrder = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.cmbOffice = new System.Windows.Forms.ComboBox();
             this.btnPalvelutEdit = new System.Windows.Forms.Button();
             this.btnPalvelutDelete = new System.Windows.Forms.Button();
             this.btnPalvelutAdd = new System.Windows.Forms.Button();
@@ -64,6 +69,7 @@
             this.tbPalvelutType = new System.Windows.Forms.TextBox();
             this.tbPalvelutName = new System.Windows.Forms.TextBox();
             this.tabToimipisteet = new System.Windows.Forms.TabPage();
+            this.cmbOfficeOrder = new System.Windows.Forms.ComboBox();
             this.btnToimiEdit = new System.Windows.Forms.Button();
             this.btnToimiDelete = new System.Windows.Forms.Button();
             this.dgvToimipisteet = new System.Windows.Forms.DataGridView();
@@ -83,6 +89,7 @@
             this.tbToimiZip = new System.Windows.Forms.TextBox();
             this.tbToimiName = new System.Windows.Forms.TextBox();
             this.tabVaraukset = new System.Windows.Forms.TabPage();
+            this.cmbReservationOrder = new System.Windows.Forms.ComboBox();
             this.btnVarauksetAdd = new System.Windows.Forms.Button();
             this.btnVarauksetEdit = new System.Windows.Forms.Button();
             this.btnVarauksetDel = new System.Windows.Forms.Button();
@@ -99,6 +106,20 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.cbxVarauksetAsiakas = new System.Windows.Forms.ComboBox();
+            this.tabKayttajat = new System.Windows.Forms.TabPage();
+            this.cmbUserOrder = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.cbxKayttajatAdmin = new System.Windows.Forms.CheckBox();
+            this.tbKayttajatPassword = new System.Windows.Forms.TextBox();
+            this.tbKayttajatUsername = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.tabMain.SuspendLayout();
             this.tabAsiakkaat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsiakkaat)).BeginInit();
@@ -108,6 +129,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvToimipisteet)).BeginInit();
             this.tabVaraukset.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabKayttajat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -116,6 +140,7 @@
             this.tabMain.Controls.Add(this.tabPalvelut);
             this.tabMain.Controls.Add(this.tabToimipisteet);
             this.tabMain.Controls.Add(this.tabVaraukset);
+            this.tabMain.Controls.Add(this.tabKayttajat);
             this.tabMain.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabMain.Location = new System.Drawing.Point(13, 12);
             this.tabMain.Multiline = true;
@@ -131,6 +156,7 @@
             // tabAsiakkaat
             // 
             this.tabAsiakkaat.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tabAsiakkaat.Controls.Add(this.cmbCustomerOrder);
             this.tabAsiakkaat.Controls.Add(this.btnAsiakkaatEdit);
             this.tabAsiakkaat.Controls.Add(this.btnAsiakkaatDelete);
             this.tabAsiakkaat.Controls.Add(this.dgvAsiakkaat);
@@ -155,6 +181,21 @@
             this.tabAsiakkaat.Size = new System.Drawing.Size(567, 397);
             this.tabAsiakkaat.TabIndex = 0;
             this.tabAsiakkaat.Text = "Asiakkaat";
+            // 
+            // cmbCustomerOrder
+            // 
+            this.cmbCustomerOrder.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbCustomerOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCustomerOrder.ForeColor = System.Drawing.Color.White;
+            this.cmbCustomerOrder.FormattingEnabled = true;
+            this.cmbCustomerOrder.Items.AddRange(new object[] {
+            "Nimen mukaan",
+            "Kaupungin mukaan"});
+            this.cmbCustomerOrder.Location = new System.Drawing.Point(18, 358);
+            this.cmbCustomerOrder.Name = "cmbCustomerOrder";
+            this.cmbCustomerOrder.Size = new System.Drawing.Size(115, 24);
+            this.cmbCustomerOrder.TabIndex = 37;
             // 
             // btnAsiakkaatEdit
             // 
@@ -194,7 +235,7 @@
             this.btnAsiakkaatAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsiakkaatAdd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsiakkaatAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAsiakkaatAdd.Location = new System.Drawing.Point(475, 285);
+            this.btnAsiakkaatAdd.Location = new System.Drawing.Point(475, 283);
             this.btnAsiakkaatAdd.Name = "btnAsiakkaatAdd";
             this.btnAsiakkaatAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAsiakkaatAdd.TabIndex = 33;
@@ -205,6 +246,7 @@
             // tbAsiakasPhone
             // 
             this.tbAsiakasPhone.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbAsiakasPhone.ForeColor = System.Drawing.Color.White;
             this.tbAsiakasPhone.Location = new System.Drawing.Point(397, 247);
             this.tbAsiakasPhone.Name = "tbAsiakasPhone";
             this.tbAsiakasPhone.Size = new System.Drawing.Size(153, 22);
@@ -213,6 +255,7 @@
             // tbAsiakasEmail
             // 
             this.tbAsiakasEmail.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbAsiakasEmail.ForeColor = System.Drawing.Color.White;
             this.tbAsiakasEmail.Location = new System.Drawing.Point(397, 208);
             this.tbAsiakasEmail.Name = "tbAsiakasEmail";
             this.tbAsiakasEmail.Size = new System.Drawing.Size(153, 22);
@@ -221,6 +264,7 @@
             // tbAsiakasZip
             // 
             this.tbAsiakasZip.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbAsiakasZip.ForeColor = System.Drawing.Color.White;
             this.tbAsiakasZip.Location = new System.Drawing.Point(397, 132);
             this.tbAsiakasZip.Name = "tbAsiakasZip";
             this.tbAsiakasZip.Size = new System.Drawing.Size(153, 22);
@@ -229,6 +273,7 @@
             // tbAsiakasCity
             // 
             this.tbAsiakasCity.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbAsiakasCity.ForeColor = System.Drawing.Color.White;
             this.tbAsiakasCity.Location = new System.Drawing.Point(397, 170);
             this.tbAsiakasCity.Name = "tbAsiakasCity";
             this.tbAsiakasCity.Size = new System.Drawing.Size(153, 22);
@@ -237,6 +282,7 @@
             // tbAsiakasStreetAdress
             // 
             this.tbAsiakasStreetAdress.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbAsiakasStreetAdress.ForeColor = System.Drawing.Color.White;
             this.tbAsiakasStreetAdress.Location = new System.Drawing.Point(397, 94);
             this.tbAsiakasStreetAdress.Name = "tbAsiakasStreetAdress";
             this.tbAsiakasStreetAdress.Size = new System.Drawing.Size(153, 22);
@@ -245,6 +291,7 @@
             // tbAsiakasPassword
             // 
             this.tbAsiakasPassword.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbAsiakasPassword.ForeColor = System.Drawing.Color.White;
             this.tbAsiakasPassword.Location = new System.Drawing.Point(397, 56);
             this.tbAsiakasPassword.Name = "tbAsiakasPassword";
             this.tbAsiakasPassword.Size = new System.Drawing.Size(153, 22);
@@ -253,6 +300,7 @@
             // tbAsiakasUsername
             // 
             this.tbAsiakasUsername.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbAsiakasUsername.ForeColor = System.Drawing.Color.White;
             this.tbAsiakasUsername.Location = new System.Drawing.Point(397, 18);
             this.tbAsiakasUsername.Name = "tbAsiakasUsername";
             this.tbAsiakasUsername.Size = new System.Drawing.Size(153, 22);
@@ -307,7 +355,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(301, 98);
+            this.label12.Location = new System.Drawing.Point(301, 95);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 16);
             this.label12.TabIndex = 21;
@@ -338,6 +386,9 @@
             // tabPalvelut
             // 
             this.tabPalvelut.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tabPalvelut.Controls.Add(this.cmbServiceOrder);
+            this.tabPalvelut.Controls.Add(this.label26);
+            this.tabPalvelut.Controls.Add(this.cmbOffice);
             this.tabPalvelut.Controls.Add(this.btnPalvelutEdit);
             this.tabPalvelut.Controls.Add(this.btnPalvelutDelete);
             this.tabPalvelut.Controls.Add(this.btnPalvelutAdd);
@@ -358,6 +409,42 @@
             this.tabPalvelut.Size = new System.Drawing.Size(567, 397);
             this.tabPalvelut.TabIndex = 1;
             this.tabPalvelut.Text = "Palvelut";
+            // 
+            // cmbServiceOrder
+            // 
+            this.cmbServiceOrder.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbServiceOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbServiceOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbServiceOrder.ForeColor = System.Drawing.Color.White;
+            this.cmbServiceOrder.FormattingEnabled = true;
+            this.cmbServiceOrder.Location = new System.Drawing.Point(18, 358);
+            this.cmbServiceOrder.Name = "cmbServiceOrder";
+            this.cmbServiceOrder.Size = new System.Drawing.Size(115, 24);
+            this.cmbServiceOrder.TabIndex = 41;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(301, 95);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(73, 16);
+            this.label26.TabIndex = 40;
+            this.label26.Text = "Toimipiste";
+            // 
+            // cmbOffice
+            // 
+            this.cmbOffice.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbOffice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOffice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbOffice.ForeColor = System.Drawing.Color.White;
+            this.cmbOffice.FormattingEnabled = true;
+            this.cmbOffice.Location = new System.Drawing.Point(397, 94);
+            this.cmbOffice.Name = "cmbOffice";
+            this.cmbOffice.Size = new System.Drawing.Size(153, 24);
+            this.cmbOffice.TabIndex = 39;
+            this.cmbOffice.Click += new System.EventHandler(this.cmbOffice_Click);
             // 
             // btnPalvelutEdit
             // 
@@ -389,7 +476,7 @@
             this.btnPalvelutAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPalvelutAdd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPalvelutAdd.ForeColor = System.Drawing.Color.White;
-            this.btnPalvelutAdd.Location = new System.Drawing.Point(475, 285);
+            this.btnPalvelutAdd.Location = new System.Drawing.Point(475, 322);
             this.btnPalvelutAdd.Name = "btnPalvelutAdd";
             this.btnPalvelutAdd.Size = new System.Drawing.Size(75, 23);
             this.btnPalvelutAdd.TabIndex = 34;
@@ -400,7 +487,8 @@
             // tbPalvelutDescription
             // 
             this.tbPalvelutDescription.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.tbPalvelutDescription.Location = new System.Drawing.Point(397, 171);
+            this.tbPalvelutDescription.ForeColor = System.Drawing.Color.White;
+            this.tbPalvelutDescription.Location = new System.Drawing.Point(397, 208);
             this.tbPalvelutDescription.Multiline = true;
             this.tbPalvelutDescription.Name = "tbPalvelutDescription";
             this.tbPalvelutDescription.Size = new System.Drawing.Size(153, 100);
@@ -411,7 +499,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(301, 171);
+            this.label15.Location = new System.Drawing.Point(301, 209);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(54, 16);
             this.label15.TabIndex = 21;
@@ -422,7 +510,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(301, 133);
+            this.label16.Location = new System.Drawing.Point(301, 171);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(28, 16);
             this.label16.TabIndex = 20;
@@ -433,7 +521,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(301, 95);
+            this.label17.Location = new System.Drawing.Point(301, 133);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 16);
             this.label17.TabIndex = 19;
@@ -472,7 +560,8 @@
             // tbPalvelutAlv
             // 
             this.tbPalvelutAlv.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.tbPalvelutAlv.Location = new System.Drawing.Point(397, 132);
+            this.tbPalvelutAlv.ForeColor = System.Drawing.Color.White;
+            this.tbPalvelutAlv.Location = new System.Drawing.Point(397, 170);
             this.tbPalvelutAlv.Name = "tbPalvelutAlv";
             this.tbPalvelutAlv.Size = new System.Drawing.Size(153, 22);
             this.tbPalvelutAlv.TabIndex = 9;
@@ -480,7 +569,8 @@
             // tbPalvelutPrice
             // 
             this.tbPalvelutPrice.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.tbPalvelutPrice.Location = new System.Drawing.Point(397, 94);
+            this.tbPalvelutPrice.ForeColor = System.Drawing.Color.White;
+            this.tbPalvelutPrice.Location = new System.Drawing.Point(397, 132);
             this.tbPalvelutPrice.Name = "tbPalvelutPrice";
             this.tbPalvelutPrice.Size = new System.Drawing.Size(153, 22);
             this.tbPalvelutPrice.TabIndex = 7;
@@ -488,6 +578,7 @@
             // tbPalvelutType
             // 
             this.tbPalvelutType.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbPalvelutType.ForeColor = System.Drawing.Color.White;
             this.tbPalvelutType.Location = new System.Drawing.Point(397, 56);
             this.tbPalvelutType.Name = "tbPalvelutType";
             this.tbPalvelutType.Size = new System.Drawing.Size(153, 22);
@@ -496,6 +587,7 @@
             // tbPalvelutName
             // 
             this.tbPalvelutName.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbPalvelutName.ForeColor = System.Drawing.Color.White;
             this.tbPalvelutName.Location = new System.Drawing.Point(397, 18);
             this.tbPalvelutName.Name = "tbPalvelutName";
             this.tbPalvelutName.Size = new System.Drawing.Size(153, 22);
@@ -504,6 +596,7 @@
             // tabToimipisteet
             // 
             this.tabToimipisteet.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tabToimipisteet.Controls.Add(this.cmbOfficeOrder);
             this.tabToimipisteet.Controls.Add(this.btnToimiEdit);
             this.tabToimipisteet.Controls.Add(this.btnToimiDelete);
             this.tabToimipisteet.Controls.Add(this.dgvToimipisteet);
@@ -528,6 +621,18 @@
             this.tabToimipisteet.Size = new System.Drawing.Size(567, 397);
             this.tabToimipisteet.TabIndex = 2;
             this.tabToimipisteet.Text = "Toimipisteet";
+            // 
+            // cmbOfficeOrder
+            // 
+            this.cmbOfficeOrder.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbOfficeOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOfficeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbOfficeOrder.ForeColor = System.Drawing.Color.White;
+            this.cmbOfficeOrder.FormattingEnabled = true;
+            this.cmbOfficeOrder.Location = new System.Drawing.Point(18, 358);
+            this.cmbOfficeOrder.Name = "cmbOfficeOrder";
+            this.cmbOfficeOrder.Size = new System.Drawing.Size(115, 24);
+            this.cmbOfficeOrder.TabIndex = 39;
             // 
             // btnToimiEdit
             // 
@@ -578,7 +683,8 @@
             // tbToimiDescription
             // 
             this.tbToimiDescription.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.tbToimiDescription.Location = new System.Drawing.Point(397, 246);
+            this.tbToimiDescription.ForeColor = System.Drawing.Color.White;
+            this.tbToimiDescription.Location = new System.Drawing.Point(397, 247);
             this.tbToimiDescription.Multiline = true;
             this.tbToimiDescription.Name = "tbToimiDescription";
             this.tbToimiDescription.Size = new System.Drawing.Size(153, 100);
@@ -587,6 +693,7 @@
             // tbToimiPhone
             // 
             this.tbToimiPhone.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbToimiPhone.ForeColor = System.Drawing.Color.White;
             this.tbToimiPhone.Location = new System.Drawing.Point(397, 208);
             this.tbToimiPhone.Name = "tbToimiPhone";
             this.tbToimiPhone.Size = new System.Drawing.Size(153, 22);
@@ -643,9 +750,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(301, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
+            this.label3.Size = new System.Drawing.Size(113, 16);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Kaupunki";
+            this.label3.Text = "Postitoimipaikka";
             // 
             // label2
             // 
@@ -672,6 +779,7 @@
             // tbToimiStreetAdress
             // 
             this.tbToimiStreetAdress.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbToimiStreetAdress.ForeColor = System.Drawing.Color.White;
             this.tbToimiStreetAdress.Location = new System.Drawing.Point(397, 132);
             this.tbToimiStreetAdress.Name = "tbToimiStreetAdress";
             this.tbToimiStreetAdress.Size = new System.Drawing.Size(153, 22);
@@ -680,6 +788,7 @@
             // tbToimiEmail
             // 
             this.tbToimiEmail.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbToimiEmail.ForeColor = System.Drawing.Color.White;
             this.tbToimiEmail.Location = new System.Drawing.Point(397, 170);
             this.tbToimiEmail.Name = "tbToimiEmail";
             this.tbToimiEmail.Size = new System.Drawing.Size(153, 22);
@@ -688,6 +797,7 @@
             // tbToimiCity
             // 
             this.tbToimiCity.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbToimiCity.ForeColor = System.Drawing.Color.White;
             this.tbToimiCity.Location = new System.Drawing.Point(397, 94);
             this.tbToimiCity.Name = "tbToimiCity";
             this.tbToimiCity.Size = new System.Drawing.Size(153, 22);
@@ -696,6 +806,7 @@
             // tbToimiZip
             // 
             this.tbToimiZip.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbToimiZip.ForeColor = System.Drawing.Color.White;
             this.tbToimiZip.Location = new System.Drawing.Point(397, 56);
             this.tbToimiZip.Name = "tbToimiZip";
             this.tbToimiZip.Size = new System.Drawing.Size(153, 22);
@@ -704,6 +815,7 @@
             // tbToimiName
             // 
             this.tbToimiName.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbToimiName.ForeColor = System.Drawing.Color.White;
             this.tbToimiName.Location = new System.Drawing.Point(397, 18);
             this.tbToimiName.Name = "tbToimiName";
             this.tbToimiName.Size = new System.Drawing.Size(153, 22);
@@ -712,6 +824,7 @@
             // tabVaraukset
             // 
             this.tabVaraukset.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tabVaraukset.Controls.Add(this.cmbReservationOrder);
             this.tabVaraukset.Controls.Add(this.btnVarauksetAdd);
             this.tabVaraukset.Controls.Add(this.btnVarauksetEdit);
             this.tabVaraukset.Controls.Add(this.btnVarauksetDel);
@@ -735,13 +848,25 @@
             this.tabVaraukset.TabIndex = 3;
             this.tabVaraukset.Text = "Varaukset";
             // 
+            // cmbReservationOrder
+            // 
+            this.cmbReservationOrder.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbReservationOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReservationOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbReservationOrder.ForeColor = System.Drawing.Color.White;
+            this.cmbReservationOrder.FormattingEnabled = true;
+            this.cmbReservationOrder.Location = new System.Drawing.Point(18, 358);
+            this.cmbReservationOrder.Name = "cmbReservationOrder";
+            this.cmbReservationOrder.Size = new System.Drawing.Size(115, 24);
+            this.cmbReservationOrder.TabIndex = 42;
+            // 
             // btnVarauksetAdd
             // 
             this.btnVarauksetAdd.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVarauksetAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVarauksetAdd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVarauksetAdd.ForeColor = System.Drawing.Color.White;
-            this.btnVarauksetAdd.Location = new System.Drawing.Point(475, 248);
+            this.btnVarauksetAdd.Location = new System.Drawing.Point(475, 244);
             this.btnVarauksetAdd.Name = "btnVarauksetAdd";
             this.btnVarauksetAdd.Size = new System.Drawing.Size(75, 23);
             this.btnVarauksetAdd.TabIndex = 41;
@@ -783,6 +908,8 @@
             // 
             // dtpVarauksetDateEnd
             // 
+            this.dtpVarauksetDateEnd.CalendarFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpVarauksetDateEnd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpVarauksetDateEnd.Location = new System.Drawing.Point(397, 208);
             this.dtpVarauksetDateEnd.Name = "dtpVarauksetDateEnd";
             this.dtpVarauksetDateEnd.Size = new System.Drawing.Size(153, 22);
@@ -790,6 +917,8 @@
             // 
             // dtpVarauksetDateStart
             // 
+            this.dtpVarauksetDateStart.CalendarFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpVarauksetDateStart.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpVarauksetDateStart.Location = new System.Drawing.Point(397, 170);
             this.dtpVarauksetDateStart.Name = "dtpVarauksetDateStart";
             this.dtpVarauksetDateStart.Size = new System.Drawing.Size(153, 22);
@@ -797,6 +926,8 @@
             // 
             // dtpVarauksetDateTime
             // 
+            this.dtpVarauksetDateTime.CalendarFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpVarauksetDateTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpVarauksetDateTime.Location = new System.Drawing.Point(397, 132);
             this.dtpVarauksetDateTime.Name = "dtpVarauksetDateTime";
             this.dtpVarauksetDateTime.Size = new System.Drawing.Size(153, 22);
@@ -804,8 +935,11 @@
             // 
             // cbxVarauksetToimipiste
             // 
-            this.cbxVarauksetToimipiste.FormattingEnabled = true;
-            this.cbxVarauksetToimipiste.Location = new System.Drawing.Point(397, 92);
+            this.cbxVarauksetToimipiste.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cbxVarauksetToimipiste.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxVarauksetToimipiste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxVarauksetToimipiste.ForeColor = System.Drawing.Color.White;
+            this.cbxVarauksetToimipiste.Location = new System.Drawing.Point(397, 94);
             this.cbxVarauksetToimipiste.Name = "cbxVarauksetToimipiste";
             this.cbxVarauksetToimipiste.Size = new System.Drawing.Size(153, 24);
             this.cbxVarauksetToimipiste.TabIndex = 19;
@@ -823,8 +957,12 @@
             // 
             // cbxVarauksetPalvelu
             // 
+            this.cbxVarauksetPalvelu.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cbxVarauksetPalvelu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxVarauksetPalvelu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxVarauksetPalvelu.ForeColor = System.Drawing.Color.White;
             this.cbxVarauksetPalvelu.FormattingEnabled = true;
-            this.cbxVarauksetPalvelu.Location = new System.Drawing.Point(397, 54);
+            this.cbxVarauksetPalvelu.Location = new System.Drawing.Point(397, 56);
             this.cbxVarauksetPalvelu.Name = "cbxVarauksetPalvelu";
             this.cbxVarauksetPalvelu.Size = new System.Drawing.Size(153, 24);
             this.cbxVarauksetPalvelu.TabIndex = 16;
@@ -886,24 +1024,200 @@
             // 
             // cbxVarauksetAsiakas
             // 
+            this.cbxVarauksetAsiakas.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cbxVarauksetAsiakas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxVarauksetAsiakas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxVarauksetAsiakas.ForeColor = System.Drawing.Color.White;
             this.cbxVarauksetAsiakas.FormattingEnabled = true;
-            this.cbxVarauksetAsiakas.Location = new System.Drawing.Point(397, 16);
+            this.cbxVarauksetAsiakas.Items.AddRange(new object[] {
+            "Testi",
+            "Pitempitestieetähnäähmiteetoimik"});
+            this.cbxVarauksetAsiakas.Location = new System.Drawing.Point(397, 18);
             this.cbxVarauksetAsiakas.Name = "cbxVarauksetAsiakas";
             this.cbxVarauksetAsiakas.Size = new System.Drawing.Size(153, 24);
             this.cbxVarauksetAsiakas.TabIndex = 10;
+            // 
+            // tabKayttajat
+            // 
+            this.tabKayttajat.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tabKayttajat.Controls.Add(this.cmbUserOrder);
+            this.tabKayttajat.Controls.Add(this.button2);
+            this.tabKayttajat.Controls.Add(this.button3);
+            this.tabKayttajat.Controls.Add(this.button1);
+            this.tabKayttajat.Controls.Add(this.label29);
+            this.tabKayttajat.Controls.Add(this.cbxKayttajatAdmin);
+            this.tabKayttajat.Controls.Add(this.tbKayttajatPassword);
+            this.tabKayttajat.Controls.Add(this.tbKayttajatUsername);
+            this.tabKayttajat.Controls.Add(this.dataGridView2);
+            this.tabKayttajat.Controls.Add(this.label27);
+            this.tabKayttajat.Controls.Add(this.label28);
+            this.tabKayttajat.Location = new System.Drawing.Point(4, 25);
+            this.tabKayttajat.Name = "tabKayttajat";
+            this.tabKayttajat.Padding = new System.Windows.Forms.Padding(3);
+            this.tabKayttajat.Size = new System.Drawing.Size(567, 397);
+            this.tabKayttajat.TabIndex = 4;
+            this.tabKayttajat.Text = "Käyttäjät";
+            // 
+            // cmbUserOrder
+            // 
+            this.cmbUserOrder.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbUserOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUserOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbUserOrder.ForeColor = System.Drawing.Color.White;
+            this.cmbUserOrder.FormattingEnabled = true;
+            this.cmbUserOrder.Location = new System.Drawing.Point(18, 358);
+            this.cmbUserOrder.Name = "cmbUserOrder";
+            this.cmbUserOrder.Size = new System.Drawing.Size(115, 24);
+            this.cmbUserOrder.TabIndex = 45;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(139, 359);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 44;
+            this.button2.Text = "Muokkaa";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(220, 359);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 43;
+            this.button3.Text = "Poista";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(475, 149);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Lisää";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(394, 18);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(108, 16);
+            this.label29.TabIndex = 31;
+            this.label29.Text = "Käyttäjän luonti";
+            // 
+            // cbxKayttajatAdmin
+            // 
+            this.cbxKayttajatAdmin.AutoSize = true;
+            this.cbxKayttajatAdmin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxKayttajatAdmin.ForeColor = System.Drawing.Color.White;
+            this.cbxKayttajatAdmin.Location = new System.Drawing.Point(482, 122);
+            this.cbxKayttajatAdmin.Name = "cbxKayttajatAdmin";
+            this.cbxKayttajatAdmin.Size = new System.Drawing.Size(68, 20);
+            this.cbxKayttajatAdmin.TabIndex = 30;
+            this.cbxKayttajatAdmin.Text = "Admin";
+            this.cbxKayttajatAdmin.UseVisualStyleBackColor = true;
+            // 
+            // tbKayttajatPassword
+            // 
+            this.tbKayttajatPassword.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbKayttajatPassword.ForeColor = System.Drawing.Color.White;
+            this.tbKayttajatPassword.Location = new System.Drawing.Point(397, 94);
+            this.tbKayttajatPassword.Name = "tbKayttajatPassword";
+            this.tbKayttajatPassword.Size = new System.Drawing.Size(153, 22);
+            this.tbKayttajatPassword.TabIndex = 29;
+            // 
+            // tbKayttajatUsername
+            // 
+            this.tbKayttajatUsername.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tbKayttajatUsername.ForeColor = System.Drawing.Color.White;
+            this.tbKayttajatUsername.Location = new System.Drawing.Point(397, 56);
+            this.tbKayttajatUsername.Name = "tbKayttajatUsername";
+            this.tbKayttajatUsername.Size = new System.Drawing.Size(153, 22);
+            this.tbKayttajatUsername.TabIndex = 28;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(18, 18);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(277, 335);
+            this.dataGridView2.TabIndex = 27;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(301, 95);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(67, 16);
+            this.label27.TabIndex = 26;
+            this.label27.Text = "Salasana";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(301, 56);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(92, 16);
+            this.label28.TabIndex = 25;
+            this.label28.Text = "Käytttäjänimi";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(600, 371);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 67);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(638, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(28, 25);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(600, 450);
+            this.ClientSize = new System.Drawing.Size(678, 450);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabMain);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMain";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseUp);
@@ -920,6 +1234,10 @@
             this.tabVaraukset.ResumeLayout(false);
             this.tabVaraukset.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabKayttajat.ResumeLayout(false);
+            this.tabKayttajat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -997,5 +1315,25 @@
         private System.Windows.Forms.Button btnVarauksetEdit;
         private System.Windows.Forms.Button btnVarauksetDel;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox cmbOffice;
+        private System.Windows.Forms.TabPage tabKayttajat;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ComboBox cmbCustomerOrder;
+        private System.Windows.Forms.ComboBox cmbServiceOrder;
+        private System.Windows.Forms.ComboBox cmbOfficeOrder;
+        private System.Windows.Forms.ComboBox cmbReservationOrder;
+        private System.Windows.Forms.ComboBox cmbUserOrder;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.CheckBox cbxKayttajatAdmin;
+        private System.Windows.Forms.TextBox tbKayttajatPassword;
+        private System.Windows.Forms.TextBox tbKayttajatUsername;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
     }
 }

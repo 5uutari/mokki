@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="ClientUtils.cs" />
     <Compile Include="ErrorUtils.cs" />
     <Compile Include="FormUtils.cs" />
     <Compile Include="FrmLogin.cs">

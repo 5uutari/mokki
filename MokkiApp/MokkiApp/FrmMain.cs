@@ -47,7 +47,15 @@ namespace MokkiApp
             dragging = false;
         }
         private void btnAsiakkaatAdd_Click(object sender, EventArgs e) {
-
+            try
+            {
+                Client c = new Client(tbAsiakasEtunimi.Text, tbAsiakasSukunimi.Text, tbAsiakasStreetAdress.Text, tbAsiakasZip.Text , tbAsiakasCity.Text, tbAsiakasEmail.Text, tbAsiakasPhone.Text);
+                ClientUtils.AddClient(c);
+            }
+            catch (Exception ex)
+            {
+                ErrorUtils.AddErrorMessage(ex.Message);
+            }
         }
 
         private void btnPalvelutAdd_Click(object sender, EventArgs e) {
